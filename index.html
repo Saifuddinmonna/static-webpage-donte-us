@@ -7,11 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donate Today - Home</title>
     <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body class="body--div">
-    <nav>
+    <nav class="modern-nav">
+      <div class="nav-brand">
+        <i class="fas fa-hands-helping"></i>
+        <span>Donate Today</span>
+      </div>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li>
           <a href="services.html">Services</a>
@@ -24,186 +30,177 @@
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
-  <section >
-      <section>
-       <div class="main-div-banner">
-         <div class="img-container">
-           <img src="images/banner/donation-banner.jpg" alt="Donation Banner">
-         </div>
-         <div class="banner-content">
-           <h1 class="h1-banner">Let's Help Those Who Are More In Need</h1>
-          <p class="p-banner">
-            Besides feeling good about yourself for doing something for others
-            is also one of the best ways to enhance your well-being. In the
-            society, there are people that are lack of basic needs of the living
-            like food, shelter, and education.
-          </p>
-          </div>
-          <div class="div-btn-banner">
-            <a class="btn-banner" href="#">Donate Now</a>
-          </div>
-       
-      <section>
-         <div class="main-div-donate">
-            <h1 class="h1-donate">Donate Today</h1>
-            <p class="p-donate">
-              Helping such people is a great deed. These people can be helped in
-              various ways by the ones who own everything. People can contribute
-              small amounts to make their living from vulnerable to better.
-            </p>
-          </div>
-          <div class="taka">
-            <div class="taka1">1000tk</div>
-            <div class="taka2">2000tk</div>
-            <div class="taka3">3000tk</div>
-            <div class="taka4">4000tk</div>
-            <div class="taka5">5000tk</div>
-            <div class="other-donate-now">
-              <input
-                class="amount"
-                type="number"
-                name=""
-                placeholder="Other Amount"
-                id=""
-              />
-              <a class="btn-donate" href="#">Donate Now </a>
-            </div>
-          </div>
-      </section>
-         
 
-    <!-- "our-donate-plan starts from here-->
+    <section class="main-div-banner">
+      
+      <div class="banner-content">
+        <div class="banner-badge ">Join Our Mission</div>
+        <h1 class="h1-banner">Let's Help Those Who Are More In Need</h1>
+        <p class="p-banner">
+          Besides feeling good about yourself for doing something for others is also one of the best ways to enhance your well-being. In the society, there are people that are lack of basic needs of the living like food, shelter, and education.
+        </p>
+        <div class="banner-buttons">
+          <a class="btn-banner primary" href="#donate">
+            <i class="fas fa-heart"></i>
+            Donate Now
+          </a>
+          <a class="btn-banner secondary" href="#learn-more">
+            <i class="fas fa-info-circle"></i>
+            Learn More
+          </a>
+        </div>
+        <div class="banner-stats">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-users"></i>
+            <span class="stat-number">10K+</span>
+            <span class="stat-label">People Helped</span>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-hand-holding-heart"></i>
+            <span class="stat-number">5K+</span>
+            <span class="stat-label">Donors</span>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+            <i class="fas fa-globe"></i>
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Locations</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
 
+    <section id="donate" class="main-div-donate">
+      <div class="donate-content">
+        <h1 class="h1-donate">Donate Today</h1>
+        <p class="p-donate">
+          Helping such people is a great deed. These people can be helped in various ways by the ones who own everything. People can contribute small amounts to make their living from vulnerable to better.
+        </p>
+        <div class="taka">
+          <div class="taka-amount">1000tk</div>
+          <div class="taka-amount">2000tk</div>
+          <div class="taka-amount">3000tk</div>
+          <div class="taka-amount">4000tk</div>
+          <div class="taka-amount">5000tk</div>
+          <div class="other-donate-now">
+            <input class="amount" type="number" placeholder="Other Amount" />
+            <a class="btn-donate" href="#">Donate Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="our-donate-plan">
       <div class="div-our-donate-plan">
         <h1 class="h1-our-donate-plane">Our Donate Plan</h1>
         <p class="p-our-donate-plane">
-          Donating money is the easiest way in which the needy can be helped.
-          They can be donated money or things in order to make their life
-          better. With this money, they can buy food for themselves.
+          Donating money is the easiest way in which the needy can be helped. They can be donated money or things in order to make their life better. With this money, they can buy food for themselves.
         </p>
       </div>
       <div class="donate-plan-cards-container">
         <div class="div-food">
-          <img class="img-svg" src="icons/food.png" alt="Food icon" />
+          <div class="plan-icon">
+            <i class="fas fa-utensils fa-3x"></i>
+          </div>
           <h3 class="h3-our-donate-plane-food">Food for a family</h3>
           <p class="p-our-donate-plane-food">
-            Your donation of any amount provide your "new family" with enough
-            groceries to get them through the end of the month.
+            Your donation of any amount provide your "new family" with enough groceries to get them through the end of the month.
           </p>
         </div>
         <div class="div-shelter">
-          <img class="img-svg-shelter" src="icons/shelter.png" alt="Shelter icon" />
+          <div class="plan-icon">
+            <i class="fas fa-home fa-3x"></i>
+          </div>
           <h3 class="h3-our-donate-plane">Shelter for a family</h3>
           <p class="p-our-donate-plane-shelter">
-            earn about how we helped 2600 homeless people in 2020 because your
-            contribution matters. Can you imagine living on the streets with
-            nothing over,
+            Learn about how we helped 2600 homeless people in 2020 because your contribution matters. Can you imagine living on the streets with nothing over?
           </p>
         </div>
         <div class="div-education">
-          <img class="img-svg" src="icons/student.png" alt="Education icon" />
+          <div class="plan-icon">
+            <i class="fas fa-graduation-cap fa-3x"></i>
+          </div>
           <h3 class="h3-our-donate-plane">Education for a child</h3>
           <p class="p-our-donate-plane-education">
-            Poor people cannot afford an education. Hence by donating the books to
-            study can also help them. Giving free education can help them to lead
-            a better life.
+            Poor people cannot afford an education. Hence by donating the books to study can also help them. Giving free education can help them to lead a better life.
           </p>
         </div>
       </div>
     </section>
-     
 
+    <section class="section-5">
+      <div class="activities-1">
+        <h1 class="h1-section-5">YOU CAN MAKE A DIFFERENCE</h1>
+        <h2 class="h2-section-5">By Our Activities</h2>
+        <p class="p-section-5">
+          <span>Make a Memorial Gift for them</span><br>
+          A memorial gift is a way to honor them. It can also make a special feelings for them. Help us continue our vital work and change the lives of families and communities through the transformative power of education.<br>
+          Much of the blindness experienced in developing countries is easily prevented or treated with the right resources and education.
+        </p>
+      </div>
+      <div class="activities-2">
+        <div class="circle-of-caring">
+          <i class="fas fa-hands-helping fa-5x"></i>
+          <h3>Circle of Caring</h3>
+        </div>
+      </div>
+    </section>
 
-<!-- Our activities start from here -->
-
-<section class="section-5"
-  <div class="activities-1">
-    <h1 class="h1-section-5">
-  YOU CAN MAKE A DIFFERENCE <br>
-   By Our Activities 
-     </h1>
-       <p class="p-section-5" ><span style="color:rgb(31, 5, 230) ;">Make a Memorial Gift for them</span> <br>
-         Make a Memorial Gift for them A memorial gift is a way to honor them . <br>
-           It can also make a special fleelings for them . 
-Help us continue our vital work and change the lives of families and communities through the transformative power of education. <br>
-Much of the blindness experienced in developing countries is easily prevented or treated with the right resources and education.
-          </p>
-    
-          </div>
- 
-        <div class="activities-2">
-            <img class="activities-img" src="images/circle of caring.JPG" alt="Circle of Caring">
-          </div>
- </section> 
-
-<section class="section-4">
-    <div class="main-div-get-my-updates">
+    <section class="section-4">
+      <div class="main-div-get-my-updates">
         <div class="div-get-my-updates-writings">
           <h1 class="h1-get-my-updates">Get My Updates</h1>
           <p class="p-get-my-updates">
-            you can be a volunteer in this organization if you want to do
-            something for needy people. We are serving needy people for food,
-            education and shelter
+            You can be a volunteer in this organization if you want to do something for needy people. We are serving needy people for food, education and shelter.
           </p>
         </div>
         <div class="form-div-get-my-updates">
           <form class="form-get-my-updates" action="">
-            <input
-              class="input-name-get-my-updates"
-              type="text"
-              placeholder="User Name"
-            />
-            <input
-              class="input-email-get-my-updates"
-              type="email"
-              name="email"
-              id=""
-              placeholder="User Email"
-            />
-            <input
-              class="input-submit-get-my-updates"
-              type="submit"
-              value="subscribe"
-            />
+            <input class="input-name-get-my-updates" type="text" placeholder="User Name" />
+            <input class="input-email-get-my-updates" type="email" placeholder="User Email" />
+            <input class="input-submit-get-my-updates" type="submit" value="Subscribe" />
           </form>
         </div>
       </div>
-      
-
-<!-- Footer Start -->
-<footer class="site-footer">
-  <div class="footer-content-wrapper">
-    <div class="footer-main">
-      <div class="footer-about">
-        <h3 class="footer-heading">Be Humble</h3>
-        <p class="footer-mission">
-          Our mission is to help the needy people. Your support can make a difference.
-        </p>
-        <p class="footer-contact">
-          Contact Us: <a href="mailto:needy@gmail.com">needy@gmail.com</a> | +88000012123355
-        </p>
-      </div>
-      <div class="footer-social">
-        <h4 class="footer-social-heading">Follow Us</h4>
-        <a href="#" class="social-link"><img src="icons/facebook-brands.svg" alt="Facebook" class="social-icon"></a>
-        <a href="#" class="social-link"><img src="icons/twitter-brands.svg" alt="Twitter" class="social-icon"></a>
-        <a href="#" class="social-link"><img src="icons/instagram-brands.svg" alt="Instagram" class="social-icon"></a>
-      </div>
-    </div>
-    <div class="footer-legal-section">
-      <p class="footer-legal">
-        Sight For All is registered as a charity with the Australian Charities and Not-for-profits Commission (ACNC) and eligible tax-deductible donations have Deductible Gift Recipient (DGR) status with the Australian Tax Office. Sight For All Ltd. ABN: 62 137 081 193 Sight For All Foundation Fund ABN: 69 964 596 401.
-      </p>
-      <p class="footer-copyright">
-        &copy; 2024 Donate Today. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>
-<!-- Footer End -->
     </section>
+
+    <footer class="site-footer">
+      <div class="footer-content-wrapper">
+        <div class="footer-main">
+          <div class="footer-about">
+            <h3 class="footer-heading">Be Humble</h3>
+            <p class="footer-mission">
+              Our mission is to help the needy people. Your support can make a difference.
+            </p>
+            <p class="footer-contact">
+              Contact Us: <a href="mailto:needy@gmail.com">needy@gmail.com</a> | +88000012123355
+            </p>
+          </div>
+          <div class="footer-social">
+            <h4 class="footer-social-heading">Follow Us</h4>
+            <a href="#" class="social-link"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram fa-2x"></i></a>
+          </div>
+        </div>
+        <div class="footer-legal-section">
+          <p class="footer-legal">
+            Sight For All is registered as a charity with the Australian Charities and Not-for-profits Commission (ACNC) and eligible tax-deductible donations have Deductible Gift Recipient (DGR) status with the Australian Tax Office.
+          </p>
+          <p class="footer-copyright">
+            &copy; 2024 Donate Today. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>  

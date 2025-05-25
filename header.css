@@ -119,6 +119,7 @@ nav ul li a {
 nav ul li:hover .submenu {
   display: block;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); /* Added Poppins import */
 
@@ -146,72 +147,150 @@ nav ul li:hover .submenu {
   display: flex;
   flex-direction: column;
   position: relative;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 70%), url(images/donation1.jpg);
-  background-size: cover;
-  background-position: center;
   justify-content: center;
   align-items: center;
   padding: 4rem 2rem;
   margin: 2rem 0;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  background-repeat: no-repeat;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
 }
 
-.main-div-banner::before {
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.video-background::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 70%);
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem;
   border-radius: 20px;
+  background: rgba(240, 207, 207, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.banner-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.banner-badge{
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-item i {
+  font-size: 2rem;
+  color: #FF5959;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .banner-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+  }
 }
 
 .h1-banner {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   line-height: 1.2;
   text-align: center;
-  color: #FFFFFF;
+  color: #333;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
 }
 
 .p-banner {
   font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.6;
   text-align: center;
-  color: #FFFFFF;
+  color: #666;
   max-width: 800px;
   margin: 0 auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .div-btn-banner {
   margin-top: 2rem;
+}
+
+.btn-banner {
+  display: inline-block;
   padding: 1rem 2.5rem;
   background: #FF5959;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 89, 89, 0.3);
-}
-
-.div-btn-banner:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 89, 89, 0.4);
-  background: #ff4444;
-}
-
-.div-btn-banner a.btn-banner {
   color: #FFFFFF;
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 89, 89, 0.3);
 }
 
-/* Donate Section Improvements */
+.btn-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 89, 89, 0.4);
+  background: #ff4444;
+}
+
+/* Donate Section */
 .main-div-donate {
   padding: 4rem 2rem;
   text-align: center;
@@ -221,18 +300,9 @@ nav ul li:hover .submenu {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.h1-donate {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-.p-donate {
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
+.donate-content {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .taka {
@@ -240,11 +310,11 @@ nav ul li:hover .submenu {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1.5rem;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 1rem;
 }
 
-.taka > div {
+.taka-amount {
   background: #ffffff;
   padding: 1.5rem;
   border-radius: 10px;
@@ -256,13 +326,13 @@ nav ul li:hover .submenu {
   border: 2px solid #eee;
 }
 
-.taka > div:hover {
+.taka-amount:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-color: #FF5959;
 }
 
-.taka .taka2 {
+.taka-amount:nth-child(2) {
   background: #FFEEEE;
   border-color: #FF5959;
   color: #FF5959;
@@ -311,181 +381,75 @@ nav ul li:hover .submenu {
   background: #ff4444;
 }
 
-/* Donate Plan Section Improvements */
-.our-donate-plan {
-  padding: 4rem 2rem;
-  background: #ffffff;
-  border-radius: 20px;
-  margin: 2rem 0;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-.div-our-donate-plan {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-}
-
-.h1-our-donate-plane {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-.p-our-donate-plane {
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-  color: #666;
-  line-height: 1.6;
-}
-
-.donate-plan-cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.div-food, .div-shelter, .div-education {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 15px;
-  transition: all 0.3s ease;
-  border: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.div-food:hover, .div-shelter:hover, .div-education:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border-color: #FF5959;
-}
-
-.div-food {
-  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
-}
-
-.div-shelter {
-  background: linear-gradient(135deg, #f0f7ff 0%, #fff 100%);
-}
-
-.div-education {
-  background: linear-gradient(135deg, #f5fff5 0%, #fff 100%);
-}
-
-.div-food img, .div-shelter img, .div-education img {
-  width: 60px;
-  height: 60px;
+/* Donate Plan Section */
+.plan-icon {
+  color: #FF5959;
   margin-bottom: 1.5rem;
   transition: transform 0.3s ease;
 }
 
-.div-food:hover img, .div-shelter:hover img, .div-education:hover img {
+.div-food:hover .plan-icon,
+.div-shelter:hover .plan-icon,
+.div-education:hover .plan-icon {
   transform: scale(1.1);
 }
 
-.h3-our-donate-plane-food, .h3-our-donate-plane, .h3-our-donate-plane-education {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1rem;
+/* Activities Section */
+.section-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin-top: 40px;
+  border-radius: 20px;
+}
+
+.h2-section-5 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #FF5959;
+  margin: 1rem 0 2rem;
   font-weight: 600;
 }
 
-.p-our-donate-plane-food, .p-our-donate-plane-shelter, .p-our-donate-plane-education {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
+.circle-of-caring {
+  background: white;
+  padding: 3rem;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  transition: all 0.3s ease;
 }
 
-/* Responsive Improvements for Donate Plan */
-@media (max-width: 992px) {
-  .donate-plan-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.circle-of-caring:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 768px) {
-  .our-donate-plan {
-    padding: 3rem 1rem;
-  }
-  
-  .donate-plan-cards-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .div-food, .div-shelter, .div-education {
-    padding: 1.5rem;
-  }
+.circle-of-caring i {
+  color: #FF5959;
+  margin-bottom: 1rem;
 }
 
-/* our activities start from here */
-.section-5 {
-  /* display: inline-block; Changed to flex for better centering */
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  /* position: absolute; Removed */
-  width: 100%; /* Full width */
-  /* height: 186px; Removed, let content define height */
-  /* left: 40px; Removed */
-  /* top: 2050px; Removed */
-  padding: 50px 20px;
-  box-sizing: border-box;
-  text-align: center; /* Center text */
-  background-color: #f9f9f9; /* Light background for section */
-  margin-top: 40px; /* Spacing */
+.circle-of-caring h3 {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-.activities-1 { /* Text content container */
-    max-width: 800px; /* Limit width for readability */
-    margin-bottom: 30px; /* Space before image if it's below */
+/* Social Icons */
+.social-link i {
+  color: #D9DBE1;
+  transition: all 0.3s ease;
 }
 
-.h1-section-5 {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 700; /* Bolder */
-  font-size: clamp(28px, 4.5vw, 40px); /* Responsive font size */
-  line-height: 1.3;
-  text-align: center;
-  /* text-decoration: aqua; Removed, use color or border if needed */
-  color: #121212;
-  margin-bottom: 20px;
+.social-link:hover i {
+  color: #FF5959;
+  transform: translateY(-3px);
 }
-
-.p-section-5 {
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: clamp(16px, 2.5vw, 18px); /* Responsive font size */
-  line-height: 1.7;
-  text-align: center;
-  /* text-decoration: solid; Removed */
-  color: #505050;
-}
-
-.p-section-5 span { /* Style for the highlighted span */
-    color: #FF5959; /* Changed color */
-    font-weight: 600;
-}
-
-.activities-2 { /* Image container */
-    width: 100%;
-    max-width: 600px; /* Control image size */
-    margin-top: 20px; /* If image is below text */
-}
-.activities-img { /* Corrected class name from HTML */
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
 
 /* Get My Updates */
 .section-4 { /* This seems to be the container for "Get My Updates" */
@@ -509,6 +473,10 @@ nav ul li:hover .submenu {
   /* margin-top: 20px; Removed, handled by section-4 */
   /* padding-top: 30px; Removed, handled by section-4 */
   text-align: center;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .div-get-my-updates-writings {
@@ -527,7 +495,7 @@ nav ul li:hover .submenu {
   font-size: clamp(30px, 5vw, 45px); /* Responsive font size */
   line-height: 1.3;
   text-align: center;
-  color: #121212;
+  color: #333;
   margin-bottom: 15px;
 }
 
@@ -538,7 +506,7 @@ nav ul li:hover .submenu {
   font-size: clamp(16px, 2.5vw, 18px); /* Responsive font size */
   line-height: 1.7;
   text-align: center;
-  color: #707070;
+  color: #666;
 }
 
 .form-div-get-my-updates {
@@ -551,7 +519,7 @@ nav ul li:hover .submenu {
   /* top: 3442px; Removed */
   background: #FFF4D6;
   padding: 40px 20px; /* Add padding */
-  border-radius: 10px;
+  border-radius: 15px;
   box-sizing: border-box;
   /* margin-top: 0px; Removed */
 }
@@ -1083,122 +1051,139 @@ nav ul li:hover .submenu {
 
 .service-card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.service-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-.service-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.service-icon {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #FF5959;
   transition: transform 0.3s ease;
 }
 
-.service-card:hover .service-image img {
-  transform: scale(1.05);
+.service-card:hover .service-icon {
+  transform: scale(1.1);
 }
 
 .service-details {
-  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-details h2 {
   font-size: 1.8rem;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .service-details p {
   color: #666;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
+  text-align: center;
 }
 
 .service-details ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 25px;
+  margin-bottom: 2rem;
 }
 
 .service-details ul li {
   color: #666;
-  padding: 8px 0;
-  padding-left: 25px;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
   position: relative;
 }
 
 .service-details ul li::before {
-  content: "•";
+  content: "✓";
   color: #FF5959;
   position: absolute;
   left: 0;
-  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .service-btn {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 1rem 2rem;
   background-color: #FF5959;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-weight: 600;
+  margin-top: auto;
 }
 
 .service-btn:hover {
   background-color: #ff4040;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 89, 89, 0.3);
 }
 
 /* Impact Section */
 .impact-section {
   text-align: center;
-  padding: 60px 20px;
+  padding: 4rem 2rem;
   background-color: #f8f9fa;
-  border-radius: 10px;
+  border-radius: 20px;
+  margin-top: 4rem;
 }
 
 .impact-section h2 {
   font-size: 2.5rem;
   color: #333;
-  margin-bottom: 40px;
+  margin-bottom: 3rem;
 }
 
 .impact-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .stat-card {
   background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
 }
 
 .stat-card h3 {
   font-size: 2.5rem;
   color: #FF5959;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .stat-card p {
   color: #666;
   font-size: 1.1rem;
+  font-weight: 500;
 }
 
 /* Responsive Styles for Services Page */
@@ -1845,7 +1830,7 @@ nav ul li:hover .submenu {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
   border-radius: 20px;
 }
 
@@ -1857,5 +1842,53 @@ nav ul li:hover .submenu {
   
   .team-member .img-container {
     padding-bottom: 120%; /* Slightly taller on mobile */
+  }
+}
+
+.banner-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-item i {
+  font-size: 2rem;
+  color: #FF5959;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .banner-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
   }
 }
